@@ -1,2 +1,4 @@
 # Ludum
-The next and most revolutionnary match making software.
+The next generation and most revolutionnary match making software.
+
+*Code to come*
