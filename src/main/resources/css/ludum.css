@@ -1,0 +1,75 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+/* FROM STARTER PACK */
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+/* COLORS */
+
+.bg-yankee-blue
+{
+    background-color: #22223B;
+}
+
+.text-yankee-blue
+{
+    background-color: #22223B;
+}
+
+.bg-orange
+{
+    background-color: #FFA726;
+}
+
+.text-orange
+{
+    background-color: #FFA726;
+}
+
+/* IMAGE IN BACKGROUND */
+.section-img {
+    background-image: url("../img/bg-courts.jpg");
+}
+
+/* HOMEPAGE */
+.homepage{
+    min-height: 100vh;
+}
+
+/* TYPOGRAPHY */
+h1,h2,h3,h4{
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+a,p{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.footer 
+{
+    position: relative;
+    content: center;
+    bottom: 0px;
+   
+}
+
+.card-title {
+    font-size: 30 px;
+}
+
+.card-title {
+    
+}
