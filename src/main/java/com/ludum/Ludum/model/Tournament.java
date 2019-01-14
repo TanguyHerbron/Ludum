@@ -31,7 +31,6 @@ public class Tournament {
     @Column(name = "login_orga")
     private String loginOrga;
 
-
     public Tournament(String theName, String theDesc, String thePlace, Date theStartDate, Date theEndDate, String theHashtag, String theOrga){
         name = theName;
         description = theDesc;

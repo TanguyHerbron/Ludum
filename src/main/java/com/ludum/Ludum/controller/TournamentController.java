@@ -19,4 +19,12 @@ public class TournamentController {
         model.addAttribute("tournament", newTournament);
         return "tournament-page";
     }
+
+    @GetMapping("/displayTournaments")
+    public String displayTournaments()
+    {
+
+
+        return "listTournaments";
+    }
 }
