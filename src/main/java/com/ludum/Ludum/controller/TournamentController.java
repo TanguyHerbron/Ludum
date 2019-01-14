@@ -2,10 +2,8 @@ package com.ludum.Ludum.controller;
 
 import com.ludum.Ludum.model.Tournament;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Date;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TournamentController {
@@ -15,16 +13,10 @@ public class TournamentController {
         return "create-tournament-page";
     }
 
-    @GetMapping("/addTournament")
-    public String addTournament(@RequestParam(name="name",defaultValue="No Name") String name,
-                                @RequestParam(name="description",defaultValue="") String description,
-                                @RequestParam(name="place") String place,
-                                @RequestParam(name="startDate") Date startingDate,
-                                @RequestParam(name="endDate") Date endingDate,
-                                @RequestParam(name="hashtag") String hashtag){
+    @RequestMapping(value = "/addTournament", method = {RequestMethod.POST})
+    public String addTournament(Model model, @ModelAttribute("createTournamentForm") Tournament newTournament){
 
-        Tournament newTournament = new Tournament(name, description, place, startingDate, endingDate, hashtag, "admin");
-
-        return "listTournaments";
+        model.addAttribute("tournament", newTournament);
+        return "tournament-page";
     }
 }
