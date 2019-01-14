@@ -1,128 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-        <title>Ludum - Homepage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Ludum - Homepage</title>
 
-        <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="static/css/ludum.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/ludum.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-    </head>
+</head>
 
-    <body class="section-img">
+<body class="section-img">
 
-        <!-- Navbar -->
-        <nav class="orange lighten-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Ludum</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Create Tournament</a></li>
-                    <li><a href="#">Sign in</a></li>
-                </ul>
+<!-- Navbar -->
+<nav class="orange lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Ludum</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Create Tournament</a></li>
+            <li><a href="#">Sign in</a></li>
+        </ul>
 
-                <ul id="nav-mobile" class="sidenav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Create Tournament</a></li>
-                    <li><a href="#">Sign in</a></li>
+        <ul id="nav-mobile" class="sidenav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Create Tournament</a></li>
+            <li><a href="#">Sign in</a></li>
 
-                </ul>
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            </div>
-        </nav>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
 
-        <!-- CONTENT -->
+<!-- CONTENT -->
 
-        <!-- UPPER SECTION -->
-        <div class="section no-pad-bot" id="index-banner">
-            <div class="container">
-                <br><br>
+<!-- UPPER SECTION -->
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                        <h4 class="header2">Create Tournament</h4>
+                        <div class="row">
+                            <form class="col s12" method="post" action="/addTournament">
 
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <div class="card-panel">
-                            <h4 class="header2">Create Tournament</h4>
-                            <div class="row">
-                                <form class="col s12">
-
-                                    <div class="row">
-                                        <div class="input-field col s8">
-                                            <input id="first_name" type="text">
-                                            <label for="first_name">Tournament Name</label>
-                                        </div>
-
-                                        <div class="input-field col s4">
-                                            <input id="last_name" type="text">
-                                            <label for="last_name">Tournament Hashtag</label>
-                                        </div>
+                                <div class="row">
+                                    <div class="input-field col s8">
+                                        <input id="name" type="text">
+                                        <label for="name">Tournament Name</label>
                                     </div>
 
+                                    <div class="input-field col s4">
+                                        <input id="hashtag" type="text">
+                                        <label for="hashtag">Tournament Hashtag</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="place" type="text">
+                                        <label for="place">Place</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="startDate" type="date" class="datepicker">
+                                        <label for="startDate">Starting Date</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="endDate" type="date" class="datepicker">
+                                        <label for="endDate">Ending Date</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="description" class="materialize-textarea" length="120"></textarea>
+                                        <label for="description">Tournament descritpion</label>
+                                    </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="last_name" type="text">
-                                            <label for="last_name">Place</label>
+                                            <input class="btn cyan waves-effect waves-light right" type="submit" name="action">CREATE
+                                                <i class="mdi-content-send right"></i>
+                                            </input>
                                         </div>
                                     </div>
-
-                                    <div class="row">
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <input type="date" class="datepicker">
-                                            <label for="start">Starting Date</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input type="date" class="datepicker">
-                                            <label for="end">Ending Date</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <textarea id="message5" class="materialize-textarea" length="120"></textarea>
-                                            <label for="message">Tournament descritpion</label>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">CREATE
-                                                    <i class="mdi-content-send right"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-
-                <br><br>
-
             </div>
 
+        <br><br>
 
-            <div class="row">
-                <div class="center">
-                    <p class="footer white-text">ENSIM 4A INFO | Microprojet POO</p>
-                </div>
-            </div>
+    </div>
 
-
-            <!--  Scripts-->
-            <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-            <script src="js/materialize.js"></script>
-            <script src="js/init.js"></script>
+    <div class="row">
+        <div class="center">
+            <p class="footer white-text">ENSIM 4A INFO | Microprojet POO</p>
         </div>
-    </body>
+    </div>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+</div>
+</body>
 </html>
