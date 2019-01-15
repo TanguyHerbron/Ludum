@@ -1,16 +1,12 @@
 package com.ludum.Ludum.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class LoginController {
-
-    @GetMapping("/index")
-    public String login(Model model){
-
-        return "index";
+public class TeamController {
+    @GetMapping("/team-page")
+    public String teamPage(){
+        return "team-page";
     }
-
 }

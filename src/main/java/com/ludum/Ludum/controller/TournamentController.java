@@ -34,7 +34,12 @@ public class TournamentController {
         tournamentDAO.save(tournament);
         return "tournament-page";
     }
+  
+    @GetMapping("/displayTournaments")
+    public String displayTournaments()
+    {
 
 
-
+        return "listTournaments";
+    }
 }
