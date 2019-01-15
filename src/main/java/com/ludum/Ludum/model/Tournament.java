@@ -31,8 +31,8 @@ public class Tournament implements Serializable {
     @Column(name = "description")
     private String description;
 
-    //@Column(name = "login_orga")
-    //private String loginOrga;
+    @Column(name = "login_orga")
+    private String loginOrga;
 
     public Tournament(){}
 
@@ -43,7 +43,7 @@ public class Tournament implements Serializable {
         startDate = theStartDate;
         endDate = theEndDate;
         description = theDesc;
-        //loginOrga = theOrga;
+        loginOrga = theOrga;
     }
 
     public long getId() {
