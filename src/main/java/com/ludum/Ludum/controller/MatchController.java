@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -54,6 +55,19 @@ public class MatchController {
 
         model.addAttribute("allMatchs", matchs);
 
+        model.addAttribute("formMatch", new Match());
+
         return "listMatchs";
+    }
+
+    @PostMapping("/sendForm")
+    public String recordMatch(@ModelAttribute Match match)
+    {
+        match.setIdMatch(matchRepository.count() + 1);
+        match.setDate(new Date());
+        match.setIdTournament(0L);
+        matchRepository.save(match);
+
+        return "submitConfirmation";
     }
 }

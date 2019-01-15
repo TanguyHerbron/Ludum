@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Match list</title>
-</head>
-<body>
-    <div th:each="match: ${allMatchs}">
-        <a th:text="${match.location}"/>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Match list</title>
+    </head>
+    <body>
+        <div th:each="match: ${allMatchs}">
+            <a th:text="${match.location}"/>
+        </div>
+
+        <div>
+            <form action="#" th:action="@{/sendForm}" th:object="${formMatch}" method="post">
+                <input type="text"th:field="*{location}"/>
+                <input type="submit" value="Send"/>
+            </form>
+        </div>
+    </body>
 </html>
