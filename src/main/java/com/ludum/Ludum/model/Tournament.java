@@ -1,10 +1,13 @@
 package com.ludum.Ludum.model;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Tournament {
+public class Tournament implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +34,7 @@ public class Tournament {
     @Column(name = "login_orga")
     private String loginOrga;
 
+    public Tournament(){}
 
     public Tournament(String theName, String theDesc, String thePlace, Date theStartDate, Date theEndDate, String theHashtag, String theOrga){
         name = theName;

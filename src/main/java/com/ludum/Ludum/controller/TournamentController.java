@@ -1,22 +1,39 @@
 package com.ludum.Ludum.controller;
 
 import com.ludum.Ludum.model.Tournament;
+import com.ludum.Ludum.model.TournamentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TournamentController {
+
+    @Autowired
+    private TournamentRepository tournamentDAO;
 
     @GetMapping("/createTournament")
     public String createTournament(){
         return "create-tournament-page";
     }
 
-    @RequestMapping(value = "/addTournament", method = {RequestMethod.POST})
-    public String addTournament(Model model, @ModelAttribute("createTournamentForm") Tournament newTournament){
+    @GetMapping("/addTournament")
+    public String addTournamentForm(Model model) {
 
-        model.addAttribute("tournament", newTournament);
+        Tournament tournament = new Tournament();
+        tournament.setName("test");
+        model.addAttribute("tournamentForm", tournament);
+
+        return "addTournament";
+    }
+
+    @PostMapping("/addTournament")
+    public String addTournamentSubmit(Model model, @ModelAttribute("tournamentForm") Tournament tournament, BindingResult result){
+
+        System.out.println(tournament.getName() + model.containsAttribute("name"));
+        //tournamentDAO.save(tournament);
         return "tournament-page";
     }
 }
