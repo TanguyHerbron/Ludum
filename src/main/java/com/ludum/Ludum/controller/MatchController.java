@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class MatchController {
 
@@ -37,12 +40,19 @@ public class MatchController {
     }
 
     @GetMapping("/displayMatchsFor")
-    public String displayMatchs(@RequestParam(name="tournamentId")Long tournamentId)
+    public String displayMatchs(@RequestParam(name="tournamentId")Long tournamentId, Model model)
     {
-        if(tournamentRepository.findById(tournamentId).isPresent())
-        {
+        List<Match> matchs = new ArrayList<>();
 
+        for(Match match : matchRepository.findAll())
+        {
+            if(match.getIdTournament().equals(tournamentId))
+            {
+                matchs.add(match);
+            }
         }
+
+        model.addAttribute("allMatchs", matchs);
 
         return "listMatchs";
     }
