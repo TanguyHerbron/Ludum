@@ -1,14 +1,12 @@
 package com.ludum.Ludum.controller;
 
 import com.ludum.Ludum.model.Match;
-import com.ludum.Ludum.model.TournamentRepository;
+import com.ludum.Ludum.repository.TournamentRepository;
 import com.ludum.Ludum.repository.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 public class MatchController {
