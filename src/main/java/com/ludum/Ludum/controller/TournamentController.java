@@ -8,16 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @Controller
 public class TournamentController {
 
     @Autowired
     private TournamentRepository tournamentDAO;
 
-    @GetMapping("/createTournament")
-    public String createTournament(){
-        return "create-tournament-page";
-    }
 
     @GetMapping("/addTournament")
     public String addTournamentForm(Model model) {
@@ -26,14 +24,17 @@ public class TournamentController {
         tournament.setName("test");
         model.addAttribute("tournamentForm", tournament);
 
-        return "addTournament";
+        return "create-tournament-page";
     }
 
     @PostMapping("/addTournament")
     public String addTournamentSubmit(Model model, @ModelAttribute("tournamentForm") Tournament tournament, BindingResult result){
 
         System.out.println(tournament.getName() + model.containsAttribute("name"));
-        //tournamentDAO.save(tournament);
+        tournamentDAO.save(tournament);
         return "tournament-page";
     }
+
+
+
 }

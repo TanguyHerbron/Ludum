@@ -16,8 +16,8 @@ public class Tournament implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "hashtag")
+    private String hashtag;
 
     @Column(name = "place")
     private String place;
@@ -28,22 +28,22 @@ public class Tournament implements Serializable {
     @Column(name = "end_date")
     private Date endDate;
 
-    @Column(name = "hashtag")
-    private String hashtag;
+    @Column(name = "description")
+    private String description;
 
-    @Column(name = "login_orga")
-    private String loginOrga;
+    //@Column(name = "login_orga")
+    //private String loginOrga;
 
     public Tournament(){}
 
-    public Tournament(String theName, String theDesc, String thePlace, Date theStartDate, Date theEndDate, String theHashtag, String theOrga){
+    public Tournament(String theName, String theHashtag, String thePlace, Date theStartDate, Date theEndDate, String theDesc, String theOrga){
         name = theName;
-        description = theDesc;
+        hashtag = theHashtag;
         place = thePlace;
         startDate = theStartDate;
         endDate = theEndDate;
-        hashtag = theHashtag;
-        loginOrga = theOrga;
+        description = theDesc;
+        //loginOrga = theOrga;
     }
 
     public long getId() {
