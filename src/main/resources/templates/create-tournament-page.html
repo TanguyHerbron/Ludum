@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -51,22 +51,22 @@
                     <div class="card-panel">
                         <h4 class="header2">Create Tournament</h4>
                         <div class="row">
-                            <form class="col s12" method="post" action="/addTournament">
+                                <form class="col s12" action="#" th:action="@{/addTournament}" th:object="${tournamentForm}" method="post">
                                 <div class="row">
                                     <div class="input-field col s8">
-                                        <input id="name" type="text">
+                                        <input id="name" type="text" th:field="*{name}">
                                         <label for="name">Tournament Name</label>
                                     </div>
 
                                     <div class="input-field col s4">
-                                        <input id="hashtag" type="text">
+                                        <input id="hashtag" type="text" th:field="*{hashtag}">
                                         <label for="hashtag">Tournament Hashtag</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="place" type="text">
+                                        <input id="place" type="text" th:field="*{place}">
                                         <label for="place">Place</label>
                                     </div>
                                 </div>
@@ -77,23 +77,23 @@
 
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input id="startDate" type="date" class="datepicker">
+                                        <input id="startDate" type="date" class="datepicker" th:field="*{startDate}">
                                         <label for="startDate">Starting Date</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="endDate" type="date" class="datepicker">
+                                        <input id="endDate" type="date" class="datepicker" th:field="*{endDate}">
                                         <label for="endDate">Ending Date</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <textarea id="description" class="materialize-textarea" length="120"></textarea>
+                                        <textarea id="description" class="materialize-textarea" length="120" th:field="*{description}"></textarea>
                                         <label for="description">Tournament descritpion</label>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">CREATE
+                                            <button class="btn cyan waves-effect waves-light right" name="action"><input type="submit" value="CREATE"/>
                                                 <i class="mdi-content-send right"></i>
                                             </button>
                                         </div>
