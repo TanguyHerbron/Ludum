@@ -31,13 +31,18 @@ public class LoginController {
 
     @PostMapping("/register")
     public String registerForm(@ModelAttribute("registerForm") Person person){
-        if(person.getPassword() != person.getConfirmPassword())
+        System.out.println(person.getPassword());
+        System.out.println(person.getPassword().equals(person.getConfirmPassword()));
+        if(!person.getPassword().equals(person.getConfirmPassword()))
         {
             return "create-account-page";
         }
-        personDAO.save(person);
+        else
+        {
+            personDAO.save(person);
+            return "index";
+        }
 
-        return "index";
     }
 
 }
