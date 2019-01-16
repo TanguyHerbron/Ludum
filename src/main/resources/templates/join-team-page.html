@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -13,8 +13,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
-
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     </head>
@@ -43,55 +41,70 @@
         <!-- CONTENT -->
 
         <!-- UPPER SECTION -->
-        <div class="section no-pad-bot" id="index-banner">
+        <div class="section">
 
             <div class="container">
                 <br><br>
+
                 <div class="row">
-                    <div class="col s12 m12 l12">
+                    <div class="col s8 m8 l8">
                         <div class="card-panel">
-                            <h4 class="header2">Create Team</h4>
+
                             <div class="row">
-                                <form class="col s12"  action="#" th:action="@{/create-team-page}" th:object="${teamForm}" method="post">
 
+                                <div class="col s4 m4 l4"><h4>Join a Team</h4></div>
+
+                                <div class="container right-align">
                                     <div class="row">
-                                        <div class="input-field col s8">
-                                            <input id="name" type="text" th:field="${team.name}" >
-                                            <label for="name">Team Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="place" type="text" th:field="${team.city}" >
-                                            <label for="place">City</label>
-                                        </div>
+                                        <form method="post" action="/">
+
+                                            <div class="input-field col s4 m4 l4">
+                                                <!-- Dropdown Trigger -->
+                                                <a class='dropdown-button btn' href='#' data-activates='choose-team-dropdown'>Choose a Team</a>
+
+                                                <!-- Dropdown Structure -->
+                                                <ul id='choose-team-dropdown' class='dropdown-content'>
+                                                    <li><a href="#!">Team A</a></li>
+                                                    <li><a href="#!">Team B</a></li>
+                                                    <li><a href="#!">Team C</a></li>
+                                                    <li><a href="#!">Team E</a></li>
+                                                    <li><a href="#!">Team F</a></li>
+                                                </ul>
+                                            </div>
+
+
+                                            <div class="col s4 m4 l4">
+                                                <button class="btn waves-effect waves-light" type="submit" name="action">JOIN
+                                                    <i class="material-icons right">send</i>
+                                                </button>
+                                            </div>
+
+                                        </form>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input class="btn cyan waves-effect waves-light right" type="submit" name="action">                       <i class="mdi-content-send right"></i>
-                                                </input>
-                                        </div>
-                                    </div>
 
-                                </form>
+
+                                </div>
+
+
                             </div>
+
+
                         </div>
                     </div>
                 </div>
 
                 <br><br>
-
             </div>
-
-            <div class="row">
-                <div class="center">
-                    <p class="footer white-text">ENSIM 4A INFO | Microprojet POO</p>
-                </div>
-            </div>
-
         </div>
+
+
+        <div class="row">
+            <div class="center">
+                <p class="footer white-text">ENSIM 4A INFO | Microprojet POO</p>
+            </div>
+        </div>
+
 
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

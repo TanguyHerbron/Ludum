@@ -21,25 +21,6 @@ public class MatchController {
     @Autowired
     MatchRepository matchRepository;
 
-    @GetMapping("/createMatch")
-    public String createMatch()
-    {
-        return "create-match-page";
-    }
-
-    @RequestMapping(value = "/addMatch", method = {RequestMethod.POST})
-    public String addMatch(Model model, @ModelAttribute("createMatchFrom") Match match)
-    {
-        model.addAttribute("match", match);
-
-        /*
-        Prepare the associations between the tournament table and the match table
-        Could need an autowired attribut for the inbetween table
-         */
-
-        return "match-page";
-    }
-
     @GetMapping("/displayMatchsFor")
     public String displayMatchs(@RequestParam(name="tournamentId")Long tournamentId, Model model)
     {
@@ -55,19 +36,6 @@ public class MatchController {
 
         model.addAttribute("allMatchs", matchs);
 
-        model.addAttribute("formMatch", new Match());
-
-        return "listMatchs";
-    }
-
-    @PostMapping("/sendForm")
-    public String recordMatch(@ModelAttribute Match match)
-    {
-        match.setIdMatch(matchRepository.count() + 1);
-        match.setDate(new Date());
-        match.setIdTournament(0L);
-        matchRepository.save(match);
-
-        return "submitConfirmation";
+        return "match-page";
     }
 }
