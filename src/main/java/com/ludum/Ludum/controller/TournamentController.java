@@ -28,9 +28,13 @@ public class TournamentController {
 
     @PostMapping("/addTournament")
     public String addTournamentSubmit(Model model, @ModelAttribute("tournamentForm") Tournament tournament, BindingResult result){
-
-        System.out.println(tournament.getName() + model.containsAttribute("name"));
+        if(!tournament.getHashtag().startsWith("#"))
+        {
+            tournament.setHashtag('#' + tournament.getHashtag());
+        }
+        
         tournamentDAO.save(tournament);
+        model.addAttribute("tournament", tournament);
         return "tournament-page";
     }
   
