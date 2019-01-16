@@ -1,9 +1,6 @@
 package com.ludum.Ludum.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -27,6 +24,9 @@ public class Person {
 
     @Column(name = "password")
     private String password;
+
+    @Transient
+    private String confirmPassword;
 
     public long getId() {
         return id;
@@ -74,5 +74,13 @@ public class Person {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 }
