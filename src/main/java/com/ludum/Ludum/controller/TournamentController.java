@@ -39,10 +39,10 @@ public class TournamentController {
 
         //TwitterHashtagStream.getTweetStreamForHashtag("test");
 
-        return "tournament-page";
+        return "redirect:/displayTournament?tournamentId=" + tournament.getId();
     }
   
-    @GetMapping("/displayTournaments")
+    @GetMapping("/displayTournament")
     public String displayTournaments(@RequestParam(name="tournamentId")Long id, Model model)
     {
         if(tournamentDAO.findById(id).isPresent())
