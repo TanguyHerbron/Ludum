@@ -1,5 +1,6 @@
 package com.ludum.Ludum.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +12,20 @@ public class Person {
     @Id
     @GeneratedValue
     private long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "login")
+    private String login;
+
+    @Column(name = "mail")
+    private String mail;
+
+    @Column(name = "password")
     private String password;
 
     public long getId() {
@@ -27,5 +42,37 @@ public class Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

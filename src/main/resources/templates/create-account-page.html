@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -52,44 +52,44 @@
                         <div class="card-panel">
                             <h4 class="header2">Create a new account</h4>
                             <div class="row">
-                                <form class="col s12">
+                                <form class="col s12" th:action="@{/register}" th:object="${registerForm}" method="POST">
 
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="text">
-                                            <label for="last_name">First Name</label>
+                                            <input id="first_name" type="text" th:field="*{firstName}">
+                                            <label for="first_name">First Name</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input id="last_name" type="text">
+                                            <input id="last_name" type="text" th:field="*{name}">
                                             <label for="last_name">Last Name</label>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="first_name" type="text">
-                                            <label for="first_name">Login</label>
+                                            <input id="login" type="text" th:field="*{login}">
+                                            <label for="login">Login</label>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="first_name" type="text">
-                                            <label for="first_name">Email adress</label>
+                                            <input id="mail" type="text" th:field="*{mail}">
+                                            <label for="mail">Email adress</label>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="first_name" type="text">
-                                            <label for="first_name">Password</label>
+                                            <input id="password" type="password" th:field="*{password}">
+                                            <label for="password">Password</label>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="first_name" type="text">
-                                            <label for="first_name">Confirm password</label>
+                                            <input id="password_confirm" type="password">
+                                            <label for="password_confirm">Confirm password</label>
                                         </div>
                                     </div>
 

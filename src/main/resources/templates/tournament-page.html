@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -22,22 +22,22 @@
     <body class="section-img">
 
         <!-- Navbar -->
-        <nav class="orange lighten-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Ludum</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Create Tournament</a></li>
-                    <li><a href="#">Sign in</a></li>
-                </ul>
+            <nav class="orange lighten-1" role="navigation">
+                <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Ludum</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#">Home</a></li>
+                        <li><a th:href="@{/addTournament}">Create Tournament</a></li>
+                        <li><a href="#">Sign in</a></li>
+                    </ul>
 
-                <ul id="nav-mobile" class="sidenav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Create Tournament</a></li>
-                    <li><a href="#">Sign in</a></li>
+                    <ul id="nav-mobile" class="sidenav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Create Tournament</a></li>
+                        <li><a href="#">Sign in</a></li>
 
-                </ul>
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            </div>
+                    </ul>
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
         </nav>
 
         <!-- CONTENT -->
@@ -49,64 +49,6 @@
 
                 <div class="row">
 
-                    <!-- LEFT PART -->
-                    <div class="col s6 m6">
-
-                        <div class="row">
-                            <h1 class="col left orange-text">CREATE</h1>
-                        </div>
-
-                        <div class="row">
-                            <h1 class="col left orange-text">YOUR OWN</h1>
-                        </div>
-
-                        <div class="row">
-                            <h1 class="left orange-text">TOURNAMENTS</h1>
-                        </div>
-
-                        <div class="row">
-                            <a href="create-tournatment.html" class="btn-large waves-effect waves-light orange">Create Tournament</a>
-                        </div>
-
-                    </div>
-
-                    <!-- RIGHT PART -->
-                    <div class="col s6 m6">
-
-                        <div class="container">
-                            <!-- Inline Form -->
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s10 offset-s1">
-                                            <input id="last_name" type="text" class="validate">
-                                            <label for="last_name">Username</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s10 offset-s1">
-                                            <input id="password" type="password" class="validate">
-                                            <label for="password">Password</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col s10 offset-s1 center-align">
-                                            <button class="btn waves-effect waves-light" type="submit" name="action">
-                                                Submit
-                                                <i class="material-icons right">send</i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-
-
-                            </div>
-
-
-                        </div>
-
-                        <br><br>
-                    </div>
 
                 </div>
 
