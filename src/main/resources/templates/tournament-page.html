@@ -50,10 +50,10 @@
                 <br><br>
 
                 <div class="row center">
-                    <h1 class="white-text">TOURNAMENT NAME</h1>
-                    <h5 class="bold-text white-text">#TOURNAMENTHASHTAG</h5>
-                    <h3 class="white-text">Place</h3>
-                    <p class="white-text">Description</p>
+                    <h1 class="white-text" th:text="${tournament.name}"></h1>
+                    <h5 class="bold-text white-text" th:text="${tournament.hashtag}"></h5>
+                    <h3 class="white-text" th:text="${tournament.place}"></h3>
+                    <p class="white-text" th:text="${tournament.description}"></p>
                 </div>
 
                 <br><br>
