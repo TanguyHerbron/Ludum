@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -52,18 +52,17 @@
                         <div class="card-panel">
                             <h4 class="header2">Create Team</h4>
                             <div class="row">
-                                <form class="col s12" method="post" action="/addTournament">
+                                <form class="col s12"  action="#" th:action="@{/create-team-page}" th:object="${teamForm}" method="post">
 
                                     <div class="row">
                                         <div class="input-field col s8">
-                                            <input id="name" type="text">
+                                            <input id="name" type="text" th:field="${team.name}" >
                                             <label for="name">Team Name</label>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input id="place" type="text">
+                                            <input id="place" type="text" th:field="${team.city}" >
                                             <label for="place">City</label>
                                         </div>
                                     </div>
