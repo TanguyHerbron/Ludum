@@ -18,7 +18,13 @@ public class TeamController {
     }
 
     @GetMapping("/team-page")
-    public String teamPage(){
+    public String teamPage(@RequestParam(name="teamId")Long id, Model model){
+
+        if(teamRepository.findById(id).isPresent())
+        {
+            model.addAttribute("team", teamRepository.findById(id).get());
+        }
+
         return "team-page";
     }
 
@@ -30,9 +36,8 @@ public class TeamController {
 
     @PostMapping("/create-team-page")
     public String createTeamSubmit(Model model, @ModelAttribute("teamForm") Team team) {
-        System.out.println(team.getName());
         teamRepository.save(team);
-        return "team-page";
+        return "redirect:/team-page?teamId=" + team.getId();
     }
 
     @RequestMapping(value = "/delete-team", method = {RequestMethod.POST})
