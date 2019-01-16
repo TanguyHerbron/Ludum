@@ -2,6 +2,7 @@ package com.ludum.Ludum.controller;
 
 import com.ludum.Ludum.model.Tournament;
 import com.ludum.Ludum.repository.TournamentRepository;
+import com.ludum.Ludum.twitterAPI.TwitterHashtagStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,13 +36,19 @@ public class TournamentController {
         
         tournamentDAO.save(tournament);
         model.addAttribute("tournament", tournament);
+
+        //TwitterHashtagStream.getTweetStreamForHashtag("test");
+
         return "tournament-page";
     }
   
     @GetMapping("/displayTournaments")
-    public String displayTournaments()
+    public String displayTournaments(@RequestParam(name="tournamentId")Long id, Model model)
     {
-
+        if(tournamentDAO.findById(id).isPresent())
+        {
+            model.addAttribute("tournament", tournamentDAO.findById(id).get());
+        }
 
         return "tournament-page";
     }
