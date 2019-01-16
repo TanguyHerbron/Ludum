@@ -42,6 +42,10 @@
     background-image: url("../img/bg-courts.jpg");
 }
 
+.section-img-alt {
+    background-image: url("../img/bg-split.jpg");
+}
+
 /* HOMEPAGE */
 .homepage{
     min-height: 100vh;
@@ -72,4 +76,12 @@ a,p{
 
 .card-title {
     
+}
+
+.separator
+{
+    display: block;
+    background-color: black;
+    width: 8rem;
+    height: 3px;
 }

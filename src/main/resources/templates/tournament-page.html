@@ -10,16 +10,16 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="css/ludum.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        
+        <link rel="stylesheet" type="text/css" href="css/jquery.bracket.min.css"/>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
-
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     </head>
 
-    <body class="section-img">
+    <body>
 
         <!-- Navbar -->
         <nav class="orange lighten-1" role="navigation">
@@ -42,96 +42,121 @@
 
         <!-- CONTENT -->
 
-        <!-- UPPER SECTION -->
-        <div class="section no-pad-bot" id="index-banner">
+        <!-- TOURNAMENT INFO -->
+        <div class="section no-pad-bot bg-yankee-blue">
+
             <div class="container">
+
                 <br><br>
 
-                <div class="row">
-
-                    <!-- LEFT PART -->
-                    <div class="col s6 m6">
-
-                        <div class="row">
-                            <h1 class="col left orange-text">CREATE</h1>
-                        </div>
-
-                        <div class="row">
-                            <h1 class="col left orange-text">YOUR OWN</h1>
-                        </div>
-
-                        <div class="row">
-                            <h1 class="left orange-text">TOURNAMENTS</h1>
-                        </div>
-
-                        <div class="row">
-                            <a href="create-tournatment.html" class="btn-large waves-effect waves-light orange">Create Tournament</a>
-                        </div>
-
-                    </div>
-
-                    <!-- RIGHT PART -->
-                    <div class="col s6 m6">
-
-                        <div class="container">
-                            <!-- Inline Form -->
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s10 offset-s1">
-                                            <input id="last_name" type="text" class="validate">
-                                            <label for="last_name">Username</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s10 offset-s1">
-                                            <input id="password" type="password" class="validate">
-                                            <label for="password">Password</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col s10 offset-s1 center-align">
-                                            <button class="btn waves-effect waves-light" type="submit" name="action">
-                                                Submit
-                                                <i class="material-icons right">send</i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-
-
-                            </div>
-
-
-                        </div>
-
-                        <br><br>
-                    </div>
-
+                <div class="row center">
+                    <h1 class="white-text">TOURNAMENT NAME</h1>
+                    <h5 class="bold-text white-text">#TOURNAMENTHASHTAG</h5>
+                    <h3 class="white-text">Place</h3>
+                    <p class="white-text">Description</p>
                 </div>
 
-            </div>
+                <br><br>
 
-            <br><br>
+            </div>
 
         </div>
 
-        <!-- LOWER SECTION -->
-        <div class="section">
-            <div class="container">
-                <!--   Icon Section   -->
-                <div class="row">
-                    <div class="center">
-                        <div class="icon-block">
-                            <h2 class="center orange-text"><i class="material-icons">flash_on</i></h2>
-                            <h5 class="center white-text">Fast and Easy</h5>
+        <!-- BRACKET -->
+        <div class="section grey">
 
-                            <p class="light white-text">Description</p>
+            <div class="container">
+
+                <!-- TITLE -->
+                <div class="row center">
+                    <h1 class="white-text">Bracket</h1>
+                </div>
+
+                <!-- BRACKET -->
+                <div class="row center">
+
+                    <div id="bracket">
+                        <div class="display-bracket" >
+                        
                         </div>
                     </div>
 
+
+
+                    <!-- MATCH -->
+
+                    <!--
+<div class="container">
+
+<div class="card-panel">
+<p> TEAM A </p>
+</div>
+
+
+
+<div class="card-panel">
+
+</div>
+
+</div>
+-->
+
+
+
                 </div>
+
             </div>
+
+
+        </div>
+
+        <!-- STANDINGS -->
+        <div class="section blue">
+            <div class="container">
+
+                <!-- TITLE -->
+                <div class="row center">
+                    <h1 class="white-text">STANDINGS</h1>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Wins</th>
+                            <th>Looses</th>
+                            <th>Ties</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Avignon</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>/</td>
+                            <td>562</td>
+                        </tr>
+                        <tr>
+                            <td>Nantes</td>
+                            <td>25</td>
+                            <td>10</td>
+                            <td>/</td>
+                            <td>456</td>
+                        </tr>
+                        <tr>
+                            <td>Le Mans</td>
+                            <td>25</td>
+                            <td>53</td>
+                            <td>/</td>
+                            <td>654</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
         </div>
 
 
@@ -146,6 +171,8 @@
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
+        <script src="js/bracket.js"></script>
+        <script type="text/javascript" src="js/jquery.bracket.min.js"></script>
 
     </body>
 </html>
