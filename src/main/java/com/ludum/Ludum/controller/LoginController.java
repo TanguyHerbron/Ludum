@@ -31,6 +31,10 @@ public class LoginController {
 
     @PostMapping("/register")
     public String registerForm(@ModelAttribute("registerForm") Person person){
+        if(person.getPassword() != person.getConfirmPassword())
+        {
+            return "create-account-page";
+        }
         personDAO.save(person);
 
         return "index";
