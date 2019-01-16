@@ -2,6 +2,7 @@ package com.ludum.Ludum.controller;
 
 import com.ludum.Ludum.model.Tournament;
 import com.ludum.Ludum.repository.TournamentRepository;
+import com.ludum.Ludum.twitterAPI.TwitterHashtagStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,6 @@ public class TournamentController {
     public String addTournamentForm(Model model) {
 
         Tournament tournament = new Tournament();
-        tournament.setName("test");
         model.addAttribute("tournamentForm", tournament);
 
         return "create-tournament-page";
@@ -29,17 +29,27 @@ public class TournamentController {
 
     @PostMapping("/addTournament")
     public String addTournamentSubmit(Model model, @ModelAttribute("tournamentForm") Tournament tournament, BindingResult result){
-
-        System.out.println(tournament.getName() + model.containsAttribute("name"));
+        if(!tournament.getHashtag().startsWith("#"))
+        {
+            tournament.setHashtag('#' + tournament.getHashtag());
+        }
+        
         tournamentDAO.save(tournament);
-        return "tournament-page";
+        model.addAttribute("tournament", tournament);
+
+        //TwitterHashtagStream.getTweetStreamForHashtag("test");
+
+        return "redirect:/displayTournament?tournamentId=" + tournament.getId();
     }
   
-    @GetMapping("/displayTournaments")
-    public String displayTournaments()
+    @GetMapping("/displayTournament")
+    public String displayTournaments(@RequestParam(name="tournamentId")Long id, Model model)
     {
+        if(tournamentDAO.findById(id).isPresent())
+        {
+            model.addAttribute("tournament", tournamentDAO.findById(id).get());
+        }
 
-
-        return "listTournaments";
+        return "tournament-page";
     }
 }

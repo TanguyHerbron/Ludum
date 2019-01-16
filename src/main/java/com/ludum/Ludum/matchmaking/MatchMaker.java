@@ -40,11 +40,11 @@ public class MatchMaker {
 
                 Game game1 = new Game();
                 game1.setIdMatch(newMatch.getIdMatch());
-                game1.setIdTeam(teamList.get(i).getIdTeam());
+                game1.setIdTeam(teamList.get(i).getId());
 
                 Game game2 = new Game();
                 game2.setIdMatch(newMatch.getIdMatch());
-                game2.setIdTeam(teamList.get(j).getIdTeam());
+                game2.setIdTeam(teamList.get(j).getId());
 
                 gameRepository.save(game1);
                 gameRepository.save(game2);
