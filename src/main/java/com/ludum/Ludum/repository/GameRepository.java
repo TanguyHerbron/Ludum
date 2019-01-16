@@ -1,4 +1,7 @@
 package com.ludum.Ludum.repository;
 
-public interface GameRepository {
+import com.ludum.Ludum.model.Game;
+import org.springframework.data.repository.CrudRepository;
+
+public interface GameRepository extends CrudRepository<Game, Long> {
 }
