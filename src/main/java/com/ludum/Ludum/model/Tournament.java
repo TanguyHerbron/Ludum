@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 public class Tournament implements Serializable {
@@ -33,6 +33,14 @@ public class Tournament implements Serializable {
 
     @Column(name = "login_orga")
     private String loginOrga;
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+                name = "Participation",
+                joinColumns = {@JoinColumn(name = "tournament_id") },
+                inverseJoinColumns = {@JoinColumn (name = "team_id") }
+    )
+    List<Team> teams = new ArrayList<>();
 
     public Tournament(){}
 
