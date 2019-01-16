@@ -11,15 +11,15 @@
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="css/ludum.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
+        <link rel="stylesheet" type="text/css" href="css/jquery.bracket.min.css"/>
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
-
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     </head>
 
-    <body class="section-img">
+    <body>
 
         <!-- Navbar -->
             <nav class="orange lighten-1" role="navigation">
@@ -42,38 +42,328 @@
 
         <!-- CONTENT -->
 
-        <!-- UPPER SECTION -->
-        <div class="section no-pad-bot" id="index-banner">
+        <!-- TOURNAMENT INFO -->
+        <div class="section no-pad-bot bg-yankee-blue">
+
             <div class="container">
+
                 <br><br>
 
-                <div class="row">
-
-
+                <div class="row center">
+                    <h1 class="white-text">TOURNAMENT NAME</h1>
+                    <h5 class="bold-text white-text">#TOURNAMENTHASHTAG</h5>
+                    <h3 class="white-text">Place</h3>
+                    <p class="white-text">Description</p>
                 </div>
 
-            </div>
+                <br><br>
 
-            <br><br>
+            </div>
 
         </div>
 
-        <!-- LOWER SECTION -->
-        <div class="section">
-            <div class="container">
-                <!--   Icon Section   -->
-                <div class="row">
-                    <div class="center">
-                        <div class="icon-block">
-                            <h2 class="center orange-text"><i class="material-icons">flash_on</i></h2>
-                            <h5 class="center white-text">Fast and Easy</h5>
+        <!-- BRACKET -->
+        <div class="section green">
 
-                            <p class="light white-text">Description</p>
+            <div class="container">
+
+                <!-- TITLE -->
+                <div class="row center">
+                    <h1 class="white-text">All Matches</h1>
+                </div>
+
+                <div class="row center">
+
+                    <div class="col s4 m4 l4 center-align">
+
+                        <!-- MATCH CARD -->
+                        <div class="card-panel grey lighten-2">
+                            <div class="match-card-header">
+                                <div class="match-card-title">
+                                    <h4 class="match-card-title">Match Name</h4>
+                                    <p class="match-card-date">Day Num, Week-Day Time | Lieu</p>
+                                </div>
+                            </div>
+                            <div class="match-card-content">
+                                <div class="row">
+                                    <div class="col s3 m3 l3 center-align">
+
+                                        <h4 class="margin">C9</h4>
+                                        <p class="ultra-small">Cloud9</p>
+
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+
+                                        <div class="input-field center">
+                                            <input placeholder="0" id="home-team-score" type="text" class="validate">
+                                            <label for="home-team-score">Score</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+                                        <h4 >VS</h4>
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+
+                                        <div class="input-field center">
+                                            <input placeholder="0" id="away-team-score" type="text" class="validate">
+                                            <label for="away-team-score">Score</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col s3 m3 l3 center-align">
+                                        <div class="flight-state">
+                                            <h4 class="margin">TSM</h4>
+                                            <p class="ultra-small">Team Solo Mid</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 m6 l6 center-align">
+                                        <div class="match-info">
+                                            <p class="small">Squishy</p>
+                                            <p class="small">Squishy</p>
+                                            <p class="small">Gimmick</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col s6 m6 l6 center-align flight-state-two">
+                                        <div class="flight-info">
+                                            <p class="small">EyeIgnite</p>
+                                            <p class="small">Remkoe</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- END MATCH CARD -->
+
+                    </div>
+
+
+                    <div class="col s4 m4 l4 center-align">
+
+                        <!-- MATCH CARD -->
+                        <div class="card-panel grey lighten-2">
+                            <div class="match-card-header">
+                                <div class="match-card-title">
+                                    <h4 class="match-card-title">Match Name</h4>
+                                    <p class="match-card-date">Day Num, Week-Day Time | Lieu</p>
+                                </div>
+                            </div>
+                            <div class="match-card-content">
+                                <div class="row">
+                                    <div class="col s3 m3 l3 center-align">
+
+                                        <h4 class="margin">C9</h4>
+                                        <p class="ultra-small">Cloud9</p>
+
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+
+                                        <div class="input-field center">
+                                            <input placeholder="0" id="home-team-score-2" type="text" class="validate">
+                                            <label for="home-team-score-2">Score</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+                                        <h4 >VS</h4>
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+
+                                        <div class="input-field center">
+                                            <input placeholder="0" id="away-team-score-2" type="text" class="validate">
+                                            <label for="away-team-score-2">Score</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col s3 m3 l3 center-align">
+                                        <div class="flight-state">
+                                            <h4 class="margin">TSM</h4>
+                                            <p class="ultra-small">Team Solo Mid</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 m6 l6 center-align">
+                                        <div class="match-info">
+                                            <p class="small">Squishy</p>
+                                            <p class="small">Squishy</p>
+                                            <p class="small">Gimmick</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col s6 m6 l6 center-align flight-state-two">
+                                        <div class="flight-info">
+                                            <p class="small">EyeIgnite</p>
+                                            <p class="small">Remkoe</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END MATCH CARD -->
+
+                    </div>
+
+                    <div class="col s4 m4 l4 center-align">
+
+                        <!-- MATCH CARD -->
+                        <div class="card-panel grey lighten-2">
+                            <div class="match-card-header">
+                                <div class="match-card-title">
+                                    <h4 class="match-card-title">Match Name</h4>
+                                    <p class="match-card-date">Day Num, Week-Day Time | Lieu</p>
+                                </div>
+                            </div>
+                            <div class="match-card-content">
+                                <div class="row">
+                                    <div class="col s3 m3 l3 center-align">
+
+                                        <h4 class="margin">C9</h4>
+                                        <p class="ultra-small">Cloud9</p>
+
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+
+                                        <div class="input-field center">
+                                            <input placeholder="0" id="home-team-score-3" type="text" class="validate">
+                                            <label for="home-team-score-3">Score</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+                                        <h4 >VS</h4>
+                                    </div>
+
+                                    <div class="col s2 m2 l2 center-align">
+
+                                        <div class="input-field center">
+                                            <input placeholder="0" id="away-team-score-3" type="text" class="validate">
+                                            <label for="way-team-score-3">Score</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col s3 m3 l3 center-align">
+                                        <div class="flight-state">
+                                            <h4 class="margin">TSM</h4>
+                                            <p class="ultra-small">Team Solo Mid</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 m6 l6 center-align">
+                                        <div class="match-info">
+                                            <p class="small">Squishy</p>
+                                            <p class="small">Squishy</p>
+                                            <p class="small">Gimmick</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col s6 m6 l6 center-align flight-state-two">
+                                        <div class="flight-info">
+                                            <p class="small">EyeIgnite</p>
+                                            <p class="small">Remkoe</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END MATCH CARD -->
+
                     </div>
 
                 </div>
+
             </div>
+
+
+        </div>
+
+        <!-- BRACKET -->
+        <div class="section grey">
+
+            <div class="container">
+
+                <!-- TITLE -->
+                <div class="row center">
+                    <h1 class="white-text">Bracket</h1>
+                </div>
+
+                <!-- BRACKET -->
+                <div class="row center">
+
+                    <div id="bracket">
+                        <div class="display-bracket" >
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- STANDINGS -->
+        <div class="section blue">
+            <div class="container">
+
+                <!-- TITLE -->
+                <div class="row center">
+                    <h1 class="white-text">STANDINGS</h1>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Wins</th>
+                            <th>Looses</th>
+                            <th>Ties</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Avignon</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>/</td>
+                            <td>562</td>
+                        </tr>
+                        <tr>
+                            <td>Nantes</td>
+                            <td>25</td>
+                            <td>10</td>
+                            <td>/</td>
+                            <td>456</td>
+                        </tr>
+                        <tr>
+                            <td>Le Mans</td>
+                            <td>25</td>
+                            <td>53</td>
+                            <td>/</td>
+                            <td>654</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
         </div>
 
 
@@ -88,6 +378,8 @@
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
+        <script src="js/bracket.js"></script>
+        <script type="text/javascript" src="js/jquery.bracket.min.js"></script>
 
     </body>
 </html>
