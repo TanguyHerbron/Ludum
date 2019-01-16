@@ -1,29 +1,23 @@
 package com.ludum.Ludum.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Team {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long idTeam;
 
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "city")
     private String city;
 
-    public Team(){
+    public Long getIdTeam() {
+        return idTeam;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+    public void setIdTeam(Long idTeam) {
+        this.idTeam = idTeam;
     }
 
     public String getName() {
